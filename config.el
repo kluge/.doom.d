@@ -4,6 +4,8 @@
 
 (setq display-line-numbers-type nil)
 
+(setq +evil-want-o/O-to-continue-comments nil)
+
 (defun kluge-insert-date (arg)
   (interactive "P")
   (insert (cond
