@@ -13,3 +13,10 @@
            ((equal arg '(16)) (format-time-string "%Y-%m-%d %H:%M")))))
 
 (map! :ni "<f5>" 'kluge-insert-date)
+
+(defun kluge-append-semicolon-at-eol ()
+  (interactive)
+  (end-of-line)
+  (insert ";"))
+
+(map! :mode c++-mode :ni "M-RET" 'kluge-append-semicolon-at-eol)
