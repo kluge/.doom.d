@@ -12,7 +12,6 @@
        ophints
        (popup +defaults)
        vc-gutter
-       workspaces
 
        :editor
        (evil +everywhere)
