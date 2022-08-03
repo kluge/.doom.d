@@ -15,7 +15,6 @@
 
        :editor
        (evil +everywhere)
-       file-templates
        fold
        snippets
 
