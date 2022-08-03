@@ -21,6 +21,9 @@
 
 (map! :mode c++-mode :ni "M-RET" 'kluge-append-semicolon-at-eol)
 
+(after! git-commit
+  (setq git-commit-style-convention-checks '(non-empty-second-line)))
+
 (setq org-directory "~/org/")
 (map! :leader :desc "Open todo.org" "o t" '(lambda () (interactive) (find-file "~/org/todo.org")))
 (after! org
