@@ -41,7 +41,7 @@
        :lang
        emacs-lisp
        markdown
-       org
+       (org +journal)
        sh
 
        :config
