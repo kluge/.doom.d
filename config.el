@@ -21,3 +21,5 @@
   (insert ";"))
 
 (map! :mode c++-mode :ni "M-RET" 'kluge-append-semicolon-at-eol)
+
+(map! :leader :desc "Open todo.org" "o t" '(lambda () (interactive) (find-file "~/org/todo.org")))
