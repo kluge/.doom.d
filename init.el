@@ -8,7 +8,6 @@
        :ui
        doom
        doom-dashboard
-       hl-todo
        modeline
        ophints
        (popup +defaults)
