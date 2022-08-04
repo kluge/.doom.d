@@ -14,7 +14,7 @@
            ((equal arg '(16)) (format-time-string "%Y-%m-%d %H:%M")))))
 
 (map! :ni "<f5>" 'kluge-insert-date)
-(map! :ni "S-<f5>" '(lambda () (interactive) (kluge-insert-date '(4))))
+(map! :ni "S-<f5>" (cmd! (kluge-insert-date '(4))))
 (map! :i "C-k" 'kill-line)
 
 (defun kluge-append-semicolon-at-eol ()
@@ -28,7 +28,7 @@
   (setq git-commit-style-convention-checks '(non-empty-second-line)))
 
 (setq org-directory "~/org/")
-(map! :leader :desc "Open todo.org" "o t" '(lambda () (interactive) (find-file "~/org/todo.org")))
+(map! :leader :desc "Open todo.org" "o t" (cmd! (find-file "~/org/todo.org")))
 (after! org
   (setq org-default-notes-file (expand-file-name "backlog.org" org-directory))
   (setq org-todo-keywords
