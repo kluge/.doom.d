@@ -30,6 +30,7 @@
        :tools
        (eval +overlay)
        lookup
+       lsp
        magit
 
        :os
@@ -39,6 +40,7 @@
        emacs-lisp
        markdown
        (org +journal)
+       (scala +lsp)
        sh
 
        :config

@@ -17,16 +17,19 @@
 (map! :ni "S-<f5>" (cmd! (kluge-insert-date '(4))))
 (map! :i "C-k" 'kill-line)
 
+
+;; C++
 (defun kluge-append-semicolon-at-eol ()
   (interactive)
   (end-of-line)
   (insert ";"))
-
 (map! :mode c++-mode :ni "M-RET" 'kluge-append-semicolon-at-eol)
 
+;; Git/Magit
 (after! git-commit
   (setq git-commit-style-convention-checks '(non-empty-second-line)))
 
+;; Org
 (setq org-directory "~/org/")
 (map! :leader :desc "Open todo.org" "o t" (cmd! (find-file "~/org/todo.org")))
 (after! org
@@ -50,3 +53,12 @@
   (setq org-journal-dir "~/journal/")
   (setq org-journal-file-format "%Y-%m-%d.org")
   (add-hook 'org-journal-after-entry-create-hook 'kluge-open-below-once))
+
+;; Scala
+; Use simple indenting instead of scala-mode's own, because it doesn't support whitespace-based syntax.
+(defun kluge-do-nothing (fn &rest args)
+  nil)
+(advice-add 'scala-mode-map:add-self-insert-hooks :around 'kluge-do-nothing)
+(defun kluge-disable-indent ()
+  (setq indent-line-function 'indent-relative-first-indent-point))
+(add-hook 'scala-mode-hook 'kluge-disable-indent)
