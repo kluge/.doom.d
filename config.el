@@ -21,9 +21,11 @@
       "j l" 'avy-goto-line)
 
 ;; Company
-(map! :map company-active-map
-      "<tab>" 'company-complete-selection
-      "<return>" nil)
+(after! company
+  (map! :map company-active-map
+        "<tab>" 'company-complete-selection
+        "<return>" nil
+        "RET" nil))
 
 ;; C++
 (defun kluge-append-semicolon-at-eol ()
