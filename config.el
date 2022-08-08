@@ -62,10 +62,14 @@
   (add-hook 'org-journal-after-entry-create-hook 'kluge-open-below-once))
 
 ;; Scala
-; Use simple indenting instead of scala-mode's own, because it doesn't support whitespace-based syntax.
+; Use stupid-indent-mode instead of scala-mode's own, because it doesn't support whitespace-based syntax.
+(use-package! stupid-indent-mode
+  :commands stupid-indent-mode)
 (defun kluge-do-nothing (fn &rest args)
   nil)
 (advice-add 'scala-mode-map:add-self-insert-hooks :around 'kluge-do-nothing)
-(defun kluge-disable-indent ()
-  (setq indent-line-function 'indent-relative-first-indent-point))
-(add-hook 'scala-mode-hook 'kluge-disable-indent)
+(defun kluge-stupid-indent-for-scala ()
+  (setq tab-width 2)
+  (setq evil-shift-width 2)
+  (stupid-indent-mode 1))
+(add-hook 'scala-mode-hook 'kluge-stupid-indent-for-scala)
