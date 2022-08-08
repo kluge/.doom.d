@@ -17,6 +17,10 @@
 (map! :ni "S-<f5>" (cmd! (kluge-insert-date '(4))))
 (map! :i "C-k" 'kill-line)
 
+;; Company
+(map! :map company-active-map
+      "<tab>" 'company-complete-selection
+      "<return>" nil)
 
 ;; C++
 (defun kluge-append-semicolon-at-eol ()
