@@ -16,6 +16,7 @@
 (map! :ni "<f5>" 'kluge-insert-date)
 (map! :ni "S-<f5>" (cmd! (kluge-insert-date '(4))))
 (map! :i "C-k" 'kill-line)
+(map! :leader "SPC" 'avy-goto-char-2)
 
 ;; Company
 (map! :map company-active-map
