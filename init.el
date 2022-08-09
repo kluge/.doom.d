@@ -43,5 +43,8 @@
        (scala +lsp)
        sh
 
+       :ui
+       (window-select +numbers)
+
        :config
        (default +bindings +smartparens))
