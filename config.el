@@ -1,6 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (setq doom-theme 'doom-one)
+(setq doom-modeline-modal-icon nil)
 
 (setq display-line-numbers-type nil)
 
