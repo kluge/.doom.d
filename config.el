@@ -19,7 +19,8 @@
 (map! :i "C-k" 'kill-line)
 (map! :leader
       "SPC" 'avy-goto-char-2
-      "j l" 'avy-goto-line)
+      "j l" 'avy-goto-line
+      "v" 'er/expand-region)
 
 (after! winum
   (map! :leader
